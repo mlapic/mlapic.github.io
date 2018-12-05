@@ -1,4 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name='viewport' content='width=device-width'>
+<meta name="theme-color" content="#20262e">
+<meta charset='UTF-8' />
+<title>mlapic.github.io</title>
+<style>
+body {
+  background: #20262e;
+  margin: 0;
+  padding: 0;
+  font: 1em "Trebuchet MS", Helvetica, sans-serif;
+  color: #5ee084;
+}
 
-<h1>my github page</h1>
+#content {
+   margin: 1em;
+}
 
-<p>Test page @ github.io</p>
+.subSectionTitle {
+  padding-left: 1.5em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.subSection {
+  border: 1px solid #5ee084;
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  border-radius: 0.2em;
+  padding: 0.5em;
+  padding-bottom: 3em;
+  position: relative;
+}
+
+.openLink {
+  position: absolute;
+  right: 0.5em;
+  bottom: 0.5em;
+}
+
+.openLink a {
+  color: #5ee084;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 1200px) {
+  
+  #content {
+    width: 50%; 
+    margin-left: auto; 
+    margin-right: auto; 
+  }
+  
+  .subSection {
+    width: 50%;
+  }
+  
+}
+
+</style>
+</head>
+<body>
+
+<div id="content">
+  <h1>mlapic.github.io</h1>
+  <h2 class="subSectionTitle">Projects</h2>
+  <div class="subSection">
+    <h3>JavaScript Cookie Notes</h3>
+    Note taking singe page web app, saves notes to cookie.
+    <div class="openLink">
+      <a href="./jscn">OPEN</a>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>
