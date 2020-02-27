@@ -30,3 +30,6 @@
 30. Bavaria 8,6 Original
 31. Kozel dark
 32. Fakin ipa
+33. Pan lager
+34. Hacker Pschorr Weissbier
+35. Benediktiner weissbier
