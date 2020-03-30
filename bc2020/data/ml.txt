@@ -42,3 +42,16 @@
 42. Estrella Damm
 43. Miller Genuine Draft
 44. Garden Pilsner
+45. Garden Stout
+46. Medvedgrad Crna kraljica
+47. O'Haras crveno
+48. Carlsberg
+49. Paulaner Hefe-Weissbier
+50. Varionica Siesta Session
+51. Varionica Deep Dive IPA
+52. Zmajsko pils
+53. Varionica Neon Stout
+54. Guinness
+55. Bura Optimist Golding Ale
+56. Medvedgrad Dva klasa
+57. Grimbergen Double Ambree
