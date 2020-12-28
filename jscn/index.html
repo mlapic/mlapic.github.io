@@ -15,12 +15,10 @@ body {
   font: 1em "Trebuchet MS", Helvetica, sans-serif;
 }
 
-.addNewNoteBtn {
+.btn {
   width: 50px;
   height: 50px;
   position: absolute;
-  bottom: 20px;
-  right: 20px;
   border-radius:25px;
   line-height:48px;
   text-align:center;
@@ -29,6 +27,17 @@ body {
   font-weight: bold;
   font-size: 40px;
   cursor: pointer;
+}
+
+.addNewNoteBtn {
+  bottom: 20px;
+  right: 20px;
+}
+
+.helpBtn {
+  bottom: 20px;
+  left: 20px;
+  font-size: 30px;
 }
 
 .noteOverlay {
@@ -140,7 +149,8 @@ textarea {
 </head>
 <body>
 
-  <div id="addNewNoteBtn" class="addNewNoteBtn" onclick="openNoteDialog()">+</div>
+  <div id="addNewNoteBtn" class="btn addNewNoteBtn" onclick="openNoteDialog()">+</div>
+  <div id="helpBtn" class="btn helpBtn" onclick="openHelpScreen()">?</div>
 
   <div id="wrapperDiv">    
     <div id="notesWrapperDiv"></div>
@@ -164,6 +174,8 @@ var allNotes = [];
 
 var noteSelected = '';
 var noteDialogOpen = false;
+
+var helpScreenText = 'JSCN - JavaScript Cookie Notes\nCreate and edit notes saved in browser cookie.\n\nKeyboard shortcuts:\nAlt+a - add new note\nAlt+s - save note';
 
 // ---------- Init ----------
 restoreAll();
@@ -231,8 +243,20 @@ function selectNote(caller) {
   document.getElementById("noteOverlay").style.height = "100%";
   document.getElementById("noteDialog_DeleteBtn").style.color = "#5ee084";
   document.getElementById("noteDialog_DeleteBtn").style.cursor = "pointer";
+  document.getElementById("noteDialog_SaveBtn").style.color = "#5ee084";
+  document.getElementById("noteDialog_SaveBtn").style.cursor = "pointer";
   document.getElementById('noteTextArea').value = document.getElementById(noteSelected).innerHTML;
   document.getElementById("noteTextArea").focus();
+}
+
+function openHelpScreen() {
+  document.getElementById("noteOverlay").style.height = "100%";
+  document.getElementById("noteTextArea").value = helpScreenText;
+  document.getElementById("noteDialog_DeleteBtn").style.color = "#20262e";
+  document.getElementById("noteDialog_DeleteBtn").style.cursor = "default";
+  document.getElementById("noteDialog_SaveBtn").style.color = "#20262e";
+  document.getElementById("noteDialog_SaveBtn").style.cursor = "default";
+  noteDialogOpen = true;
 }
 
 // --------------------------------------------------------
