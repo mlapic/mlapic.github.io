@@ -163,23 +163,43 @@ var cookieExpirationDel = "; expires=Thu, 01 Jan 1970 00:00:01 GMT";
 var allNotes = [];
 
 var noteSelected = '';
+var noteDialogOpen = false;
 
 // ---------- Init ----------
 restoreAll();
 printAll();
+
+// add event listener for keyboard shortcuts
+// add new note: alt+a
+// save: alt+s
+
+function keyboardHandler(event) {
+  if(event.altKey && event.key === 'a') {
+    if(!noteDialogOpen) {
+      openNoteDialog();
+    }
+  } else if(event.altKey && event.key === 's' && noteDialogOpen) {
+    saveChanges();
+  }
+}
+
+document.addEventListener('keydown', keyboardHandler);
 
 // ---------- Page Control Functions ----------
 
 function openNoteDialog() {
   document.getElementById("noteOverlay").style.height = "100%";
   document.getElementById("noteTextArea").value = '';
+  document.getElementById("noteTextArea").focus();
   document.getElementById("noteDialog_DeleteBtn").style.color = "#20262e";
   document.getElementById("noteDialog_DeleteBtn").style.cursor = "default";
+  noteDialogOpen = true;
 }
 
 function closeDialog() {
   document.getElementById("noteOverlay").style.height = "0%";
   noteSelected = '';
+  noteDialogOpen = false;
 }
 
 function saveChanges() {
@@ -206,11 +226,13 @@ function deleteNote() {
 }
 
 function selectNote(caller) {
+  noteDialogOpen = true;
   noteSelected = caller.id;
   document.getElementById("noteOverlay").style.height = "100%";
   document.getElementById("noteDialog_DeleteBtn").style.color = "#5ee084";
   document.getElementById("noteDialog_DeleteBtn").style.cursor = "pointer";
   document.getElementById('noteTextArea').value = document.getElementById(noteSelected).innerHTML;
+  document.getElementById("noteTextArea").focus();
 }
 
 // --------------------------------------------------------
