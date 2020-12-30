@@ -191,6 +191,7 @@ function keyboardHandler(event) {
       openNoteDialog();
     }
   } else if(event.altKey && event.key === 's' && noteDialogOpen) {
+    event.preventDefault();
     saveChanges();
   }
 }
@@ -307,7 +308,7 @@ function restoreAll() {
 // ------------- Cookie functions -------------
 
 function setCookie(cName, cValue) {
-  document.cookie = cName + "=" + cValue + cookieExpirationAdd;            
+  document.cookie = cName + "=" + cValue + cookieExpirationAdd + ';SameSite=Strict';
 }
 
 function deleteCookie(cName) {
