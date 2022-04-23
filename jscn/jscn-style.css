@@ -1,0 +1,135 @@
+body {
+  background: #20262e;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font: 1em 'Trebuchet MS', Helvetica, sans-serif;
+}
+
+.btn {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  border-radius: 25px;
+  line-height: 48px;
+  text-align: center;
+  color: #5ee084;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.addNewNoteBtn {
+  bottom: 20px;
+  right: 20px;
+}
+
+.helpBtn {
+  bottom: 20px;
+  left: 20px;
+  font-size: 30px;
+}
+
+.noteOverlay {
+  height: 0%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  overflow-y: hidden;
+  transition: 0.5s;
+  background: #20262e;
+}
+
+.noteDialog {
+  top: 5%;
+  background: #20262e;
+  margin: 0 1em;
+  padding-top: 2em;
+  padding-left: 1em;
+  position: relative;
+  border: 2px solid #5ee084;
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  border-radius: 0.5em;
+}
+
+#noteTextArea {
+  width: 90%;
+  margin: 1.2em 0.1em 3.2em 0.1em;
+  padding: 0.2em;
+  height: 10em;
+  border: none;
+  font: 1em 'Trebuchet MS', Helvetica, sans-serif;
+  resize: none;
+  background: #20262e;
+  color: #eafbef;
+}
+
+textarea {
+  outline: none;
+}
+
+.dialogButtons {
+  position: absolute;
+  font-weight: bold;
+  color: #5ee084;
+  cursor: pointer;
+}
+
+#noteDialog_CloseBtn {
+  right: 0.5em;
+  top: 0.1em;
+  font-size: 2em;
+}
+
+#noteDialog_SaveBtn {
+  left: 20px;
+  bottom: 20px;
+}
+
+#noteDialog_DeleteBtn {
+  right: 20px;
+  bottom: 20px;
+}
+
+#notesWrapperDiv {
+  margin-top: 0.333em;
+  margin-bottom: 2em;
+  display: inline-block;
+  width: 100%;
+}
+
+.note {
+  color: #5ee084;
+  padding: 0.75em;
+  border: 1px solid #5ee084;
+  cursor: pointer;
+  margin-bottom: 0.3em;
+  margin-left: 0.7em;
+  margin-right: 0.7em;
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  border-radius: 0.2em;
+  word-wrap: break-word; /* IE 5.5-7 */
+  white-space: -moz-pre-wrap; /* Firefox 1.0-2.0 */
+  white-space: pre-wrap; /* current browsers */
+}
+
+/* Desktop browser, min width: 1200 */
+
+@media screen and (min-width: 1200px) {
+  #wrapperDiv {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .noteDialog {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
