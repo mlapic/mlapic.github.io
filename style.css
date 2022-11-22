@@ -1,0 +1,111 @@
+:root {
+  --defaultColor: #5ee084;
+  --backgroundColor: #20262e;
+  --defaultHoverColor: #3D7F51;
+  --themeSwitchColor: #FBFBFB;
+}
+
+[data-theme="light"] {
+  --defaultColor: #20262e;
+  --backgroundColor: #FBFBFB;
+  --defaultHoverColor: #F48816;
+  --themeSwitchColor: #20262e;
+}
+
+body {
+  background: var(--backgroundColor);
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto Mono', monospace;
+  color: var(--defaultColor);
+  transition: all 600ms ease-in-out;
+}
+
+#content {
+  margin: 1em;
+}
+
+h1 {
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+a {
+  color: var(--defaultColor);
+  text-decoration: none;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 30px;
+}
+
+.card {
+  width: 300px;
+  height: 150px;
+  border: 3px solid var(--defaultColor);
+  border-radius: 10px 20px 0 20px;
+  box-shadow: 5px 5px var(--defaultColor);
+  position: relative;
+}
+
+.card h2 {
+  font-size: 24px;
+  margin-top: 35px;
+  margin-left: 35px;
+}
+
+.card .footer {
+  color: var(--defaultColor);
+  font-size: 14px;
+  position: absolute;
+  bottom: 5px;
+  left: 15px;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.card .footer>.right {
+  font-size: 28px;
+}
+
+.card:hover {
+  cursor: pointer;
+  border-color: var(--defaultHoverColor);
+  box-shadow: 5px 5px var(--defaultHoverColor);
+}
+
+.card:active {
+  position: relative;
+  top: 2px;
+  box-shadow: 1px 1px var(--defaultHoverColor);
+}
+
+.themeSwitch {
+  position: fixed;
+  right: 10px;
+  bottom: 5px;
+}
+
+.dot {
+  height: 1em;
+  width: 1em;
+  background-color: var(--themeSwitchColor);
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 1200px) {
+
+  #content {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}

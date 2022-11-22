@@ -6,29 +6,9 @@ var allNotes = [];
 var noteSelected = '';
 var noteDialogOpen = false;
 
-var helpScreenText =
-  'JSCN - JavaScript Cookie Notes\nCreate and edit notes saved in browser cookie.\n\nKeyboard shortcuts:\nAlt+a - add new note\nAlt+s - save note';
-
 // ---------- Init ----------
 restoreAll();
 printAll();
-
-// add event listener for keyboard shortcuts
-// add new note: alt+a
-// save: alt+s
-
-function keyboardHandler(event) {
-  if (event.altKey && event.key === 'a') {
-    if (!noteDialogOpen) {
-      openNoteDialog();
-    }
-  } else if (event.altKey && event.key === 's' && noteDialogOpen) {
-    event.preventDefault();
-    saveChanges();
-  }
-}
-
-document.addEventListener('keydown', keyboardHandler);
 
 // ---------- Page Control Functions ----------
 
@@ -81,16 +61,6 @@ function selectNote(caller) {
   document.getElementById('noteTextArea').value =
     document.getElementById(noteSelected).innerHTML;
   document.getElementById('noteTextArea').focus();
-}
-
-function openHelpScreen() {
-  document.getElementById('noteOverlay').style.height = '100%';
-  document.getElementById('noteTextArea').value = helpScreenText;
-  document.getElementById('noteDialog_DeleteBtn').style.color = '#20262e';
-  document.getElementById('noteDialog_DeleteBtn').style.cursor = 'default';
-  document.getElementById('noteDialog_SaveBtn').style.color = '#20262e';
-  document.getElementById('noteDialog_SaveBtn').style.cursor = 'default';
-  noteDialogOpen = true;
 }
 
 // --------------------------------------------------------

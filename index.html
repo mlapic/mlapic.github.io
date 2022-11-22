@@ -1,86 +1,72 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name='viewport' content='width=device-width'>
-<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-<meta name="theme-color" content="#20262e">
-<meta charset='UTF-8' />
-<title>mlapic.github.io</title>
-<style>
-body {
-  background: #20262e;
-  margin: 0;
-  padding: 0;
-  font: 1em "Trebuchet MS", Helvetica, sans-serif;
-  color: #5ee084;
-}
-
-#content {
-   margin: 1em;
-}
-
-.subSectionTitle {
-  padding-left: 1.5em;
-  padding-top: 1em;
-  padding-bottom: 1em;
-}
-
-.subSection {
-  border: 1px solid #5ee084;
-  -webkit-border-radius: 0.2em;
-  -moz-border-radius: 0.2em;
-  border-radius: 0.2em;
-  padding: 0.5em;
-  padding-bottom: 3em;
-  position: relative;
-}
-
-.openLink {
-  position: absolute;
-  right: 0.5em;
-  bottom: 0.5em;
-}
-
-.openLink a {
-  color: #5ee084;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-@media screen and (min-width: 1200px) {
-  
-  #content {
-    width: 50%; 
-    margin-left: auto; 
-    margin-right: auto; 
-  }
-  
-  .subSection {
-    width: 50%;
-  }
-  
-}
-
-</style>
+  <meta name='viewport' content='width=device-width'>
+  <meta charset='UTF-8' />
+  <meta name="theme-color" content="#20262e">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+  <title>mlapic.github.io</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div id="content">
+
   <h1>mlapic.github.io</h1>
-  <!--<h2 class="subSectionTitle">Projects</h2>
-  <div class="subSection">
-    <h3>JavaScript Cookie Notes</h3>
-    Note taking singe page web app, saves notes to cookie.
-    <div class="openLink">
-      <a href="./jscn">OPEN</a>
-    </div>
-  </div>-->
+  
+  <div class="cards">
+
+    <a href="./jscn" class="card card1">
+      <h2>
+        ./jscn
+      </h2>
+      <div class="footer">
+        <div class="left">
+          HTML &bull; CSS &bull; JS
+        </div>
+        <div class="right">
+          &#9762;
+        </div>
+      </div>
+    </a>
+
+    <a href="./calc" class="card card2">
+      <h2>
+        ./calc
+      </h2>
+      <div class="footer">
+        <div class="left">
+          HTML &bull; CSS &bull; JS
+        </div>
+        <div class="right">
+          &#9762;
+        </div>
+      </div>
+    </a>
+
+  </div>
+
 </div>
 
+<div class="themeSwitch">
+  <!--<input type="checkbox" id="themeSwitch1" />-->
+  <div class="dot" id="themeSwitch"></div>
+</div>
+
+<script>
+  document.querySelector('#themeSwitch').addEventListener('click', function () {
+    const theme = document.documentElement.getAttribute('data-theme');
+    const newTheme = (theme === 'light' ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', newTheme);
+  }, false);
+</script>
 
 </body>
 </html>
