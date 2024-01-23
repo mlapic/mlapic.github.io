@@ -1,13 +1,15 @@
 document.getElementById('switch').addEventListener("click", switchClick, false);
 
 function switchClick() {
-	let c1 = document.getElementById('currency1').textContent;
+  let c1 = document.getElementById('currency1').textContent;
   let c2 = document.getElementById('currency2').textContent;
   document.getElementById('currency1').textContent = c1 === 'HRK' ? 'EUR' : 'HRK';
   document.getElementById('currency2').textContent = c2 === 'HRK' ? 'EUR' : 'HRK';
   
   convertValue();
 }
+
+switchClick();
 
 document.getElementById('calculator')
 	.querySelectorAll('.button')
